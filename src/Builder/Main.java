@@ -1,15 +1,29 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+package Builder;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("=== Sandwicherie - Commandes ===\n");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Sandwich sandwich1 = new Sandwich.SandwichBuilder("baguette")
+                .viande("jambon")
+                .build();
+        System.out.println("Commande 1 : " + sandwich1);
+
+        Sandwich sandwich2 = new Sandwich.SandwichBuilder("complet")
+                .fromage("emmental")
+                .legumes("laitue, tomate, oignon")
+                .sauce("moutarde")
+                .grille(true)
+                .build();
+        System.out.println("Commande 2 : " + sandwich2);
+
+        Sandwich sandwich3 = new Sandwich.SandwichBuilder("ciabatta")
+                .viande("poulet")
+                .fromage("cheddar")
+                .legumes("laitue, tomate, cornichon")
+                .sauce("mayo")
+                .grille(true)
+                .build();
+        System.out.println("Commande 3 : " + sandwich3);
     }
 }
